@@ -58,10 +58,17 @@ export default function Sidebar() {
 
       {/* Bottom */}
       <div className="p-3 border-t border-slate-100 space-y-0.5">
-        <button className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 w-full transition-colors">
+        <Link
+          href="/configuracion"
+          className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+            pathname === '/configuracion'
+              ? 'bg-green-500 text-white'
+              : 'text-slate-600 hover:bg-slate-100'
+          }`}
+        >
           <Settings className="w-4 h-4 flex-shrink-0" />
           Configuración
-        </button>
+        </Link>
         <Link href="/" className="block">
           <button className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-red-500 hover:bg-red-50 w-full transition-colors">
             <LogOut className="w-4 h-4 flex-shrink-0" />
